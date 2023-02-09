@@ -36,10 +36,11 @@ function write(template, data, item) {
   data.page = page;
   var result = template(data);
   if (item.slug == "home") {
-    page = "index";
+    fs.writeFileSync("./dist/index.html", result, "utf-8");
+  } else {
+    fs.mkdirSync("./dist/" + page);
+    fs.writeFileSync("./dist/" + page + "/index.html", result, "utf-8");
   }
-  fs.mkdirSync("./dist/" + page);
-  fs.writeFileSync("./dist/" + page + "/index.html", result, "utf-8");
 }
 
 render();
