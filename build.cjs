@@ -12,7 +12,7 @@ async function render() {
   var main = fs.readFileSync(partialPath, "utf-8");
   Handlebars.registerPartial("main", main);
 
-  var source = fs.readFileSync("./index.html", "utf-8");
+  var source = fs.readFileSync("./dist/index.html", "utf-8");
   const template = Handlebars.compile(source);
 
   const data_old = data;
