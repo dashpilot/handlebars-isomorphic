@@ -38,7 +38,7 @@ function write(template, data, item) {
   if (item.slug == "home") {
     page = "index";
   }
-  fs.mkDirSync("./dist/" + page);
+  fs.mkdirSync("./dist/" + page);
   fs.writeFileSync("./dist/" + page + "/index.html", result, "utf-8");
 }
 
