@@ -4,6 +4,9 @@ import Navigo from "navigo";
 
 const router = new Navigo("/");
 
+const tpl = await getTemplate();
+const data = await getData();
+
 Handlebars.registerHelper("ifEq", function (v1, v2, options) {
   if (v1 === v2) {
     return options.fn(this);
@@ -12,20 +15,14 @@ Handlebars.registerHelper("ifEq", function (v1, v2, options) {
 });
 
 router.on("/", async function () {
-  var tpl = await getTemplate();
-  var data = await getData();
   renderPage(tpl, data, "home");
 });
 
 router.on("/about", async function () {
-  var tpl = await getTemplate();
-  var data = await getData();
   renderPage(tpl, data, "about");
 });
 
 router.on("/contact", async function () {
-  var tpl = await getTemplate();
-  var data = await getData();
   renderPage(tpl, data, "contact");
 });
 
