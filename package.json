@@ -1,0 +1,19 @@
+{
+  "name": "vite-router",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node build.cjs",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "navigo": "^8.11.1",
+    "vite-plugin-handlebars": "^1.6.0"
+  }
+}
