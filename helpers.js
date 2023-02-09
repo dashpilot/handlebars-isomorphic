@@ -15,8 +15,8 @@ export async function getData() {
 
 export async function renderPage(tpl, data, page) {
   var template = Handlebars.compile(tpl);
-  data.entries = data.entries.filter((x) => x.page == page);
-
+  // data.entries = data.entries.filter((x) => x.page == page);
+  data.page = page;
   var index = data.pages.findIndex((x) => x.slug == "home");
   data.pages[index].slug = "/";
   document.querySelector("#app").innerHTML = template(data);

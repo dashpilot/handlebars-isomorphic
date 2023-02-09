@@ -1,6 +1,5 @@
 <div class="container mt-5">
-  {{#each entries}}
-
+  {{#each entries}} {{#ifEq page ../page}}
   <h2>{{title}}</h2>
-  {{{body}}} {{/each}}
+  {{{body}}} {/ifEq} {{/each}}
 </div>

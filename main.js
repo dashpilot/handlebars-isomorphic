@@ -4,6 +4,13 @@ import Navigo from "navigo";
 
 const router = new Navigo("/");
 
+Handlebars.registerHelper("ifEq", function (v1, v2, options) {
+  if (v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 router.on("/", async function () {
   var tpl = await getTemplate();
   var data = await getData();

@@ -2,6 +2,13 @@ const Handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
 
+Handlebars.registerHelper("ifEq", function (a, b, options) {
+  if (a === b) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 async function render() {
   const resp = await fetch(
     "https://vercel-ssg.website-eu-central-1.linodeobjects.com/src/data.json"
@@ -26,6 +33,7 @@ async function render() {
 function write(template, data, item) {
   var page = item.slug;
   // data.entries = data.entries.filter((x) => x.page == page);
+  data.page = page;
   var result = template(data);
   if (item.slug == "home") {
     page = "index";
