@@ -40,7 +40,7 @@ async function init() {
     "update",
     (e) => {
       console.log("update event fired");
-      console.log(e.detail);
+      renderPage(tpl, e.detail, e.detail.page);
     },
     false
   );
