@@ -30,6 +30,13 @@
 
 <div class="container mt-5">
   {{#each entries}} {{#ifEq page ../page}}
-  <h2>{{title}}</h2>
-  {{{body}}} {{/ifEq}} {{/each}}
+  <div
+    class="section editable"
+    id="{{id}}"
+    data-fields="title=txt&amp;body=rte&ampimage=img"
+  >
+    <h2>{{title}}</h2>
+    {{{body}}}
+  </div>
+  {{/ifEq}} {{/each}}
 </div>
