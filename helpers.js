@@ -1,5 +1,5 @@
 export async function getTemplate() {
-  document.querySelector("#app").innerHTML = "";
+  // document.querySelector("#app").innerHTML = "";
   const tpl = await fetch("tpl/main.html");
   const result = await tpl.text();
   return result;
