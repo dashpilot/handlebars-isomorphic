@@ -1,5 +1,5 @@
 import "./style.css";
-import { getTemplate, getData, renderPage } from "./helpers.js";
+import { getTemplate, getData, renderPage } from "./render-client.js";
 import Navigo from "navigo";
 
 const router = new Navigo("/");
