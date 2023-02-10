@@ -1,6 +1,6 @@
 export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
-  if (typeof cfg.remote_domain !== "undefined") {
+  if (cfg && typeof cfg.remote_domain !== "undefined") {
     var tpl = await fetch(cfg.remote_domain + "/tpl/main.html");
   } else {
     var tpl = await fetch("/tpl/main.html");
