@@ -16,3 +16,12 @@ export async function getData() {
   const result = await data.json();
   return result;
 }
+
+export async function renderPage(tpl, data, page) {
+  var template = Handlebars.compile(tpl);
+  // data.entries = data.entries.filter((x) => x.page == page);
+  data.page = page;
+
+  document.querySelector("#app").innerHTML = template(data);
+  console.log("template rendered");
+}
