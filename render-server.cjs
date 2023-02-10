@@ -19,8 +19,8 @@ async function render() {
   var main = fs.readFileSync(partialPath, "utf-8");
   Handlebars.registerPartial("main", main);
 
-  //let compiled = Handlebars.precompile(main);
-  // fs.writeFile("./dist/tpl/main.compiled.js", compiled, "utf-8");
+  // let compiled = Handlebars.precompile(main);
+  // fs.writeFileSync("./dist/tpl/main.compiled.js", compiled, "utf-8");
 
   var source = fs.readFileSync("./dist/index.html", "utf-8");
   const template = Handlebars.compile(source);
