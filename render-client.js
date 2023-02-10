@@ -1,7 +1,10 @@
 export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
-  console.log(document.location.origin);
-  const tpl = await fetch(document.location.origin + "/tpl/main.html");
+  if (typeof cfg.remote_domain !== "undefined") {
+    const tpl = await fetch(cfg.remote_domain + "/tpl/main.html");
+  } else {
+    const tpl = await fetch("/tpl/main.html");
+  }
   const result = await tpl.text();
   return result;
 }
