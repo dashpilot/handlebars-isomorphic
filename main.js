@@ -23,14 +23,17 @@ async function init() {
   });
 
   router.on("/", async function () {
+    window.page = "home";
     renderPage(tpl, data, "home");
   });
 
   router.on("/about", async function () {
+    window.page = "about";
     renderPage(tpl, data, "about");
   });
 
   router.on("/contact", async function () {
+    window.page = "contact";
     renderPage(tpl, data, "contact");
   });
 
