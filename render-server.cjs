@@ -11,7 +11,7 @@ Handlebars.registerHelper("ifEq", function (a, b, options) {
 
 async function render() {
   const resp = await fetch(
-    "https://vercel-ssg.website-eu-central-1.linodeobjects.com/src/data.json"
+    "https://api.eu-central-1.linodeobjects.com/test/data.json"
   );
   const data = await resp.json();
 

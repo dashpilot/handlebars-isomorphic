@@ -11,7 +11,7 @@ export async function getTemplate() {
 
 export async function getData() {
   const data = await fetch(
-    "https://vercel-ssg.website-eu-central-1.linodeobjects.com/src/data.json"
+    "https://api.eu-central-1.linodeobjects.com/test/data.json"
   );
   const result = await data.json();
   return result;
