@@ -2,7 +2,7 @@ export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
   if (typeof cfg.remote_domain !== "undefined") {
     const tpl = await fetch(cfg.remote_domain + "/tpl/main.html");
-    console.log(cfg.remote_domain);
+    console.log(tpl);
   } else {
     const tpl = await fetch("/tpl/main.html");
   }
