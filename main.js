@@ -1,3 +1,9 @@
+var head = document.getElementsByTagName("head")[0];
+var script = document.createElement("script");
+script.type = "text/javascript";
+script.src =
+  "https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js";
+head.appendChild(script);
 import "./style.css";
 import { getTemplate, getData, renderPage } from "./render-client.js";
 import Navigo from "navigo";
