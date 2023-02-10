@@ -12,6 +12,17 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
+    <script>
+      const renderPage = function (tpl, data, page) {
+        var template = Handlebars.compile(tpl);
+        // data.entries = data.entries.filter((x) => x.page == page);
+        data.page = page;
+
+        document.querySelector("#app").innerHTML = template(data);
+        console.log("template rendered");
+      };
+    </script>
   </head>
   <body>
     <div id="app">{{> main}}</div>
