@@ -19,4 +19,5 @@ export async function renderPage(tpl, data, page) {
   data.page = page;
 
   document.querySelector("#app").innerHTML = template(data);
+  console.log("template rendered");
 }
