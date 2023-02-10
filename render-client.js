@@ -1,7 +1,7 @@
 export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
-  console.log(window.location.hostname);
-  const tpl = await fetch(window.location.hostname + "/tpl/main.html");
+  console.log(document.location.origin);
+  const tpl = await fetch(document.location.origin + "/tpl/main.html");
   const result = await tpl.text();
   return result;
 }
