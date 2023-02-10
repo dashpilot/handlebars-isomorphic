@@ -1,6 +1,8 @@
 export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
-  const tpl = await fetch("tpl/main.html");
+  const tpl = await fetch(
+    "https://handlebars-isomorphic.vercel.app/tpl/main.html"
+  );
   const result = await tpl.text();
   return result;
 }
