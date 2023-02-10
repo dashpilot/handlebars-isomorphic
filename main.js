@@ -11,6 +11,15 @@ import Navigo from "navigo";
 
 const router = new Navigo("/");
 
+function renderPage(tpl, data, page) {
+  var template = Handlebars.compile(tpl);
+  // data.entries = data.entries.filter((x) => x.page == page);
+  data.page = page;
+
+  document.querySelector("#app").innerHTML = template(data);
+  console.log("template rendered");
+}
+
 async function init() {
   const tpl = await getTemplate();
   const data = await getData();
