@@ -6,7 +6,6 @@ export async function getTemplate() {
     var tpl = await fetch("/tpl/main.html");
   }
   const result = await tpl.text();
-  console.log(result);
   return result;
 }
 
