@@ -35,6 +35,15 @@ async function init() {
   });
 
   router.resolve();
+
+  document.body.addEventListener(
+    "update",
+    (e) => {
+      console.log("update event fired");
+      console.log(e.data);
+    },
+    false
+  );
 }
 
 init();
