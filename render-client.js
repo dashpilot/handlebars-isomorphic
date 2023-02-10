@@ -1,12 +1,12 @@
 export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
   if (typeof cfg.remote_domain !== "undefined") {
-    const tpl = await fetch(cfg.remote_domain + "/tpl/main.html");
-    console.log(tpl);
+    var tpl = await fetch(cfg.remote_domain + "/tpl/main.html");
   } else {
-    const tpl = await fetch("/tpl/main.html");
+    var tpl = await fetch("/tpl/main.html");
   }
   const result = await tpl.text();
+  console.log(result);
   return result;
 }
 
