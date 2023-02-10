@@ -1,8 +1,10 @@
 export async function getTemplate() {
   // document.querySelector("#app").innerHTML = "";
-
-  var tpl = await fetch("/tpl/main.html");
-  //}
+  if (typeof cfg !== "undefined" && typeof cfg.remote_domain !== "undefined") {
+    var tpl = await fetch(cfg.remote_domain + "/tpl/main.html");
+  } else {
+    var tpl = await fetch("/tpl/main.html");
+  }
   const result = await tpl.text();
   return result;
 }
