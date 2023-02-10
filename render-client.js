@@ -14,6 +14,7 @@ export async function getData() {
 }
 
 export async function renderPage(tpl, data, page) {
+  console.log(tpl);
   var template = Handlebars.compile(tpl);
   // data.entries = data.entries.filter((x) => x.page == page);
   data.page = page;
